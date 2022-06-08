@@ -10,35 +10,33 @@
 <div style="width: 70%; margin: auto; padding-top: 2%;">
     <h1>Добавление пациента</h1>
     <div style="width: 70%;">
-        <form action="#" th:action="@{/addPatient}" th:object="${serviceForm}" method="post">
+        <!--/*@thymesVar id="patient" type="com.diagcenter.testwork.PatientModel"*/-->
+        <form action="#" th:action="@{/addNewPatient}" th:object="${patient}" method="post">
             <hr>
-            <label for="avtoRepairsList">Мастерская</label>
-            <div class="form-floating mb-3">
-                <select class="form-select form-control rounded-4" id="avtoRepairsList"
-                        th:field="*{autoRepairId}">
-                    <option th:each="autoRepair : ${autoRepairs}"
-                            th:value="${autoRepair.id}"
-                            th:utext="${autoRepair.name}">
-                </select>
-            </div>
-            <label for="typeServiceList">Вид услуги</label>
-            <div class="form-floating mb-3">
-                <select class="form-select form-control rounded-4" id="typeServiceList"
-                        th:field="*{typeServiceId}">
-                    <option th:each="typeService : ${typeServices}"
-                            th:value="${typeService.id}"
-                            th:utext="${typeService.name}">
-                </select>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 15%;">Фамилия</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" th:field="${patient.firstName}">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 15%;">Время</span>
+                <span class="input-group-text" style="width: 15%;">Имя</span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default" th:field="*{time}">
+                       aria-describedby="inputGroup-sizing-default" th:field="${patient.secondName}">
             </div>
             <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default1" style="width: 15%;">Цена</span>
+                <span class="input-group-text" style="width: 15%;">Отчество</span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default" th:field="*{price}">
+                       aria-describedby="inputGroup-sizing-default" th:field="${patient.thirdName}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" style="width: 15%;">Номер телефона</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" th:field="${patient.phone}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" style="width: 15%;">Адрес</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" th:field="${patient.address}">
             </div>
             <button class="btn btn-outline-success"
                     style="display: inline; position: relative; float: right; border: 3px solid" type="submit">Добавить

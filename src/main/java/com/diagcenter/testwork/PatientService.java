@@ -12,4 +12,6 @@ public class PatientService {
     private PatientRepository repository;
 
     public List<PatientEntity> findAllPatients(){return repository.findAll();}
+
+    public void save(PatientEntity patient){repository.save(patient);}
 }

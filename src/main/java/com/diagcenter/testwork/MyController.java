@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -41,6 +38,12 @@ public class MyController {
                 .address(newPatient.getAddress())
                 .build();
         patientService.save(patient);
+        return "redirect:/";
+    }
+
+    @GetMapping("/deletePatient/{id}")
+    public String deletePatient(@PathVariable Long id){
+        patientService.deleteById(id);
         return "redirect:/";
     }
 }

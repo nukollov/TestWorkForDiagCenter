@@ -16,27 +16,27 @@
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default" style="width: 15%;">Фамилия</span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default" th:field="${patient.firstName}">
+                       aria-describedby="inputGroup-sizing-default" pattern="^[А-Яа-яЁё\s]+$" required th:field="${patient.firstName}">
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" style="width: 15%;">Имя</span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default" th:field="${patient.secondName}">
+                       aria-describedby="inputGroup-sizing-default" pattern="^[А-Яа-яЁё\s]+$" required th:field="${patient.secondName}">
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" style="width: 15%;">Отчество</span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default" th:field="${patient.thirdName}">
+                       aria-describedby="inputGroup-sizing-default" pattern="^[А-Яа-яЁё\s]+$" required th:field="${patient.thirdName}">
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" style="width: 15%;">Адрес</span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default" th:field="${patient.address}">
+                       aria-describedby="inputGroup-sizing-default" required th:field="${patient.address}">
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Номер телефона в формате 8ХХХХХХХХХХ</span>
                 <input type="tel" class="form-control" aria-label="Sizing example input"
-                       aria-describedby="inputGroup-sizing-default" pattern="8[0-9]{10}" th:field="${patient.phone}">
+                       aria-describedby="inputGroup-sizing-default" pattern="8[0-9]{10}" required th:field="${patient.phone}">
             </div>
             <button class="btn btn-outline-success"
                     style="display: inline; position: relative; float: right; border: 3px solid" type="submit">Добавить

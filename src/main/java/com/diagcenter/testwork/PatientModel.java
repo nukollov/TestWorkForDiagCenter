@@ -2,6 +2,11 @@ package com.diagcenter.testwork;
 
 import lombok.*;
 
+/**
+ * Модель для получения с клиента данных о созданном пациенте
+ * @author - Nikita Ukolov
+ * */
+
 @Data
 @Builder
 @NoArgsConstructor

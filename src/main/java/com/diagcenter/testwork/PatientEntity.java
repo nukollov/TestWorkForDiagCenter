@@ -5,6 +5,11 @@ import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
 
+/**
+ * Сущность пациента
+ * @author - Nikita Ukolov
+ * */
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

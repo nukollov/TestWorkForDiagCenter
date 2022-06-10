@@ -11,8 +11,8 @@
     <h1>Редактирование пациента</h1>
     <div style="width: 70%;">
         <!--/*@thymesVar id="patient" type="com.diagcenter.testwork.PatientModel"*/-->
-        <form action="#" th:action="@{/editChoosePatient/{id}/(id=${patient.getID()})}" th:object="${patient}" method="post">
-            <input hidden th:field="*{ID}">
+        <form action="#" th:action="@{/editChoosePatient/{id}/(id=${patient.getId()})}" th:object="${patient}" method="post">
+            <input hidden th:field="*{id}">
             <hr>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default" style="width: 15%;">Фамилия</span>

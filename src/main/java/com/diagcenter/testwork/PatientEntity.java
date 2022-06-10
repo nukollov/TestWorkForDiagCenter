@@ -1,7 +1,6 @@
 package com.diagcenter.testwork;
 
 import lombok.*;
-import org.springframework.stereotype.Controller;
 
 import javax.persistence.*;
 
@@ -20,7 +19,7 @@ import javax.persistence.*;
 public class PatientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long ID;
+    Long id;
 
     @Column(name = "first_name")
     String firstName;

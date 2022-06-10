@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тестовое задание</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<div style="width: 70%; margin: auto; padding-top: 2%;">
+    <h1>Редактирование пациента</h1>
+    <div style="width: 70%;">
+        <!--/*@thymesVar id="patient" type="com.diagcenter.testwork.PatientModel"*/-->
+        <form action="#" th:action="@{/editChoosePatient/{id}/(id=${patient.getID()})}" th:object="${patient}" method="post">
+            <input hidden th:field="*{ID}">
+            <hr>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default" style="width: 15%;">Фамилия</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" pattern="^[А-Яа-яЁё\s]+$" required th:field="${patient.firstName}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" style="width: 15%;">Имя</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" pattern="^[А-Яа-яЁё\s]+$" required th:field="${patient.secondName}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" style="width: 15%;">Отчество</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" pattern="^[А-Яа-яЁё\s]+$" required th:field="${patient.thirdName}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" style="width: 15%;">Адрес</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" required th:field="${patient.address}">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Номер телефона в формате 8ХХХХХХХХХХ</span>
+                <input type="tel" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" pattern="8[0-9]{10}" required th:field="${patient.phone}">
+            </div>
+            <button class="btn btn-outline-success"
+                    style="display: inline; position: relative; float: right; border: 3px solid" type="submit">Добавить
+            </button>
+        </form>
+        <button type="button" class="btn btn-outline-dark"
+                style="display: inline; position: relative; float: left; border: 3px solid"><a href="/" style="text-decoration: none; color: black;">Вернуться</a>
+        </button>
+    </div>
+</div>
+</body>
+</html>

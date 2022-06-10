@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MyController {
+
     @Autowired
     PatientService patientService;
 
@@ -18,8 +19,6 @@ public class MyController {
         ModelAndView mv = new ModelAndView("/allPatients");
         mv.addObject("patients", patientService.findAllPatients());
         return mv;
-        //model.addAttribute("patients", patientService.findAllPatients());
-        //return "allPatients";
     }
 
     @GetMapping("/addPatient")
@@ -44,6 +43,19 @@ public class MyController {
     @GetMapping("/deletePatient/{id}")
     public String deletePatient(@PathVariable Long id){
         patientService.deleteById(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/editPatient/{id}")
+    public String showEditPage(@PathVariable Long id, Model model){
+        model.addAttribute("patient", patientService.findById(id));
+        return "editPatient";
+    }
+
+    @PostMapping("/editChoosePatient/{id}")
+    public String editPatient(@ModelAttribute PatientEntity patient){
+        System.out.println();
+        patientService.save(patient);
         return "redirect:/";
     }
 }

@@ -19,7 +19,7 @@
             <th scope="col">Имя</th>
             <th scope="col">Отчество</th>
             <th scope="col">Телефон</th>
-            <th scope="col">Номер</th>
+            <th scope="col">Адрес</th>
         </tr>
         </thead>
         <tbody>
@@ -39,10 +39,10 @@
                     Удалить
                     <!--                        <a th:href="@{/deleteService/id={serviceId}/(serviceId=${service.id})}">Удалить</a>-->
                 </button>
-<!--                <button type="button" class="btn btn-outline-dark"-->
-<!--                        style="display: inline; position: relative; float: right; border: 3px solid; margin-right: 2%;">-->
-<!--                    <a href="/editService" th:href="@{/editService/id={serviceId}/(serviceId=${service.id})}"-->
-<!--                       style="text-decoration: none; color: black;">Редактировать</a></button>-->
+                <button type="button" class="btn btn-outline-dark"
+                        style="display: inline; position: relative; float: right; border: 3px solid; margin-right: 2%;">
+                    <a th:href="@{/editPatient/{id}/(id=${patient.getID()})}"
+                       style="text-decoration: none; color: black;">Редактировать</a></button>
             </td>
         </tr>
         </tbody>

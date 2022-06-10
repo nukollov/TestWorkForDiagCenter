@@ -16,4 +16,6 @@ public class PatientService {
     public void save(PatientEntity patient){repository.save(patient);}
 
     public void deleteById(Long id){repository.deleteById(id);}
+
+    public PatientEntity findById(Long id){return repository.findById(id).orElseThrow();}
 }
